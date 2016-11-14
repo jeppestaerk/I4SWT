@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{509828F2-CB09-4941-AE6D-2EE08C74AE3B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AirTrafficMonitoring</RootNamespace>
+    <AssemblyName>AirTrafficMonitoring</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TransponderReceiver, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TransponderReceiver.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Receiver\IReceiver.cs" />
+    <Compile Include="Receiver\TransponderDataReceiver.cs" />
+    <Compile Include="EventHandler\EventContext.cs" />
+    <Compile Include="EventHandler\EventHandlerFactory.cs" />
+    <Compile Include="EventHandler\IEventContext.cs" />
+    <Compile Include="EventHandler\IEventHandler.cs" />
+    <Compile Include="EventHandler\IEventHandlerFactory.cs" />
+    <Compile Include="EventHandler\SeperationEventHandler.cs" />
+    <Compile Include="EventHandler\TrackEnteredAirspaceEventHandler.cs" />
+    <Compile Include="EventHandler\TrackLeftAirspaceEventHandler.cs" />
+    <Compile Include="EventPublisher\EventListGenerator.cs" />
+    <Compile Include="EventPublisher\EventObj.cs" />
+    <Compile Include="EventPublisher\EventPublisher.cs" />
+    <Compile Include="EventPublisher\EventPublisherEntryLeft.cs" />
+    <Compile Include="EventPublisher\EventPublisherSeperation.cs" />
+    <Compile Include="EventPublisher\IEventListGenerator.cs" />
+    <Compile Include="EventPublisher\IEventObj.cs" />
+    <Compile Include="Output\Screen.cs" />
+    <Compile Include="Output\ILog.cs" />
+    <Compile Include="Output\IScreen.cs" />
+    <Compile Include="Output\Log.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Track\ITrackObj.cs" />
+    <Compile Include="Track\TrackObj.cs" />
+    <Compile Include="Validator\AirSpaceValidator.cs" />
+    <Compile Include="Validator\IValidator.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

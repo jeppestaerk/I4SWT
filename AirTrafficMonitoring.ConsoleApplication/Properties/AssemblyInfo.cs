@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("I4SWT")]
+[assembly: AssemblyTitle("ATM.ConsoleApplication")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("I4SWT")]
+[assembly: AssemblyProduct("ATM.ConsoleApplication")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c2adafc5-9ab7-4c2c-9c59-901283b3019c")]
+[assembly: Guid("9cea4c83-76f0-4575-b4b8-c2cf19b7a505")]
 
 // Version information for an assembly consists of the following four values:
 //
